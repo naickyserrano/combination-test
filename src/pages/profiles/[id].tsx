@@ -23,7 +23,7 @@ export async function getServerSideProps({
 }: GetServerSidePropsInterface) {
 	const id = parseInt(params.id, 10) + 1;
 	const res = await fetch(
-		`https://randomuser.me/api/?page=1&results=${id}&seed=1`
+		`${process.env.NEXT_PUBLIC_API}/?page=1&results=${id}&seed=1`
 	);
 	const users = await res.json();
 

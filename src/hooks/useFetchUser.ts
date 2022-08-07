@@ -13,7 +13,7 @@ const useFetchUser = () => {
 			index <= 1 ? 32 : (previousPageData?.results.length || 0) + 8; // make sure to fetch 8 users on succeeding call
 
 		if (previousPageData && !previousPageData.results.length) return null; // reached the end
-		return `https://randomuser.me/api/?page=1&results=${pageResult}&seed=1`; // SWR key
+		return `${process.env.NEXT_PUBLIC_API}/?page=1&results=${pageResult}&seed=1`; // SWR key
 	};
 
 	const { data, error, size, setSize } = useSWRInfinite(getKey, {

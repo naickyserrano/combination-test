@@ -11,7 +11,7 @@ import { FallbackInterface } from '@/modules/profile/interfaces';
 
 export async function getServerSideProps() {
 	const res = await fetch(
-		'https://randomuser.me/api/?page=1&results=72&seed=1'
+		`${process.env.NEXT_PUBLIC_API}/?page=1&results=72&seed=1`
 	);
 	const users = await res.json();
 
@@ -20,7 +20,7 @@ export async function getServerSideProps() {
 	return {
 		props: {
 			fallback: {
-				'https://randomuser.me/api/?page=1&results=72&seed=1': users,
+				[`${process.env.NEXT_PUBLIC_API}/?page=1&results=72&seed=1`]: users,
 			},
 		},
 	};
