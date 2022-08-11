@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Layout } from 'antd';
+import { Layout, Progress } from 'antd';
 
 /**
  * Add styling for layouts
@@ -46,6 +46,14 @@ const Copyright = styled.p`
 const ContainerErrorPage = styled.div`
 	min-height: 41.313rem;
 `;
+const PageLoaderContainer = styled.div`
+	height: 0.5rem;
+	position: relative;
+`;
+const PageLoader = styled(Progress)`
+	line-height: 0;
+	position: absolute;
+`;
 
 export {
 	ContentWrapper,
@@ -56,4 +64,6 @@ export {
 	LogoName,
 	Copyright,
 	ContainerErrorPage,
+	PageLoaderContainer,
+	PageLoader,
 };
